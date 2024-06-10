@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char nombre[50];
+
+    // Pedir al usuario que ingrese su nombre
+    printf("¿Cuál es su nombre? ");
+    fgets(nombre, 50, stdin);
+
+    // Eliminar el salto de línea al final del nombre
+    nombre[strcspn(nombre, "\n")] = '\0';
+
+    // Mostrar el mensaje de saludo personalizado
+    printf("¡Hola, %s! Es un placer saludarte.\n", nombre);
+
+    return 0;
+}
