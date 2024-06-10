@@ -1,0 +1,48 @@
+include<stdio.h>
+
+float potencia (float base, int exponente) {
+ float resultado = 1;
+ int i;
+ for (i = 0; i <exponente; ++i) {
+     resultado *= base;
+ }
+ return resultado;
+}
+
+int main() {
+ float x, y, resultado;
+ char op;
+ int valido = 1; 
+ 
+ printf("ingrese operación:");
+ scanf("%c", &op);
+ printf("ingrese número1: ");
+ scanf("%f", &x);
+ printf("ingrese número2: ");
+ scanf("%f", &y);
+ 
+ switch (op) {
+     case '+':
+         resultado = x + y;
+         break;
+     case '-':
+         resultado = x - y;
+         break;
+     case '*':
+         resultado = x * y;
+         break;
+     case '/':
+         resultado = x / y;
+         break;
+     case '^':
+         resultado = potencia(x, (int) y);
+         break;
+     default:
+         valido =0;
+ }
+ if (valido)
+     printf("El resultado es %f\n", resultado);
+ else
+     printf("operación invalida\n");
+ return 0;
+}
